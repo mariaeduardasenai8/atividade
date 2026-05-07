@@ -24,7 +24,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label class="form-label">Produto</label>
-                                <select class="form-select" wire.model='idProdutoSelecionado'>
+                                <select class="form-select" wire:model='idProdutoSelecionado'>
                                     <option value="">Selecione um produto</option>
                                     @foreach ($produtos as $produto)
                                     <option value="{{$produto->id}}">
