@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Produto;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+   //usuario
+   User::create([
+    'name'=>'Admin',
+    'email'=>'admin@senai.br',
+    'password'=> Hash::make('123'),
+   ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+   //produto
+     Produto::create([
+    'nome'=>'martelo',
+    'valor'=>'50.90',
+    'qtd_estoque' => 0,
+    'qtd_minima' => 5
+     ]);
+
+     Produto::create([
+    'nome'=>'Alicate',
+    'valor'=>'30',
+    'qtd_estoque' => 0,
+    'qtd_minima' => 3
+     ]);
+
+     Produto::create([
+    'nome'=>'Furadeira',
+    'valor'=>'99.99',
+    'qtd_estoque' => 0,
+    'qtd_minima' => 8
+     ]);
     }
 }
