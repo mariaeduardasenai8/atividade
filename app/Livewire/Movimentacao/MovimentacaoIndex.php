@@ -9,7 +9,7 @@ class MovimentacaoIndex extends Component
 {
     public function render()
     {
-        $movimentacaos = Movimentacao::all();
+        $movimentacaos = Movimentacao::orderBy('data_movimentacao', 'desc')->get();
         return view('livewire.movimentacao.movimentacao-index', compact('movimentacaos'));
     }
 }
